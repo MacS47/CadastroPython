@@ -6,7 +6,7 @@
 #
 
 # ------------------------
-# A primeira etapa consiste em exibir o menu de de opções:
+# A primeira etapa consiste em exibir o menu de opções:
 # * Cadastrar
 # * Editar
 # * Listar

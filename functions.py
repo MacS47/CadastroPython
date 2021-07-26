@@ -7,13 +7,18 @@
 
 import os
 
+
+# Essa função é responsável por limpar a tela do Console
+# funciona em Windows e Linux
 def clear():
     if os.name == "nt":
         os.system("cls")
     else:
         os.system("clear")
 
-
+# A função recebe um valor e, dependendo desse valor uma segunda 
+# função é chamada. Como não existe o switch case em python desenvolvi
+# esse método
 def switch_case(option):
     swt_cs={
         1 : register,
@@ -25,6 +30,49 @@ def switch_case(option):
 
 
 def register():
+    clear()
+    
+    print(f"\n====== DADOS PESSOAIS ======\n")
+
+    name = input(f"\nInforme o seu nome completo: ")
+    age = int(input(f"\nInforme a sua idade: "))
+    cpf = int(input(f"\nInforme o seu cpf(sem pontos e sem hífen): "))
+
+    verificador_cep = "N"
+    while verificador_cep == "n" or verificador_cep == "N":
+
+        print(f"\n==== ENDEREÇO ====\n")
+
+        end_rua = input(f"\nInforme a rua: ")
+        end_numero = int(input(f"\nInforme o número: "))
+        end_bairro = input(f"\nInforme o bairro: ")
+        end_cidade = input(f"\nInforme a cidade: ")
+        end_complemento = input(f"\nInforme o complemento se houver: ")
+        end_complemento2 = input(f"\nInforme o complemento adicional: ")
+        end_uf = input(f"\nInforme a UF: ")
+
+        # Criei esse campo para verificar se os dados informados estavam corretos
+        verificador_cep = input(f"\n\nOs dados acima estão corretos(S/N): ")
+
+    # Armazenando dentro do dicionário, os dados informados pelo usuário
+    data_user={
+        "name" : name,
+        "age" : age,
+        "cpf" : cpf,
+        "end_rua" : end_rua,
+        "end_numero" : end_numero,
+        "end_bairro" : end_bairro,
+        "end_cidade" : end_cidade,
+        "end_complemento" : end_complemento,
+        "end_complemento2" : end_complemento2,
+        "end_uf" : end_uf
+    }
+
+    # Abrindo o arquivo e gravando os dados nele    
+    file = open("base.txt","a")
+    file.write(f"{data_user['name']};{data_user['age']};{data_user['cpf']};{data_user['end_rua']};{data_user['end_bairro']};{data_user['end_cidade']};{data_user['end_complemento']};{data_user['end_complemento2']};{data_user['end_uf']}\n")
+    file.close()
+
     print(f"\nfuncão Register")
     input(f"\nVocê será redirecionado para o menu principal.\nPressione Enter.")
 
