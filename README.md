@@ -58,5 +58,4 @@ Essa função não foi concluída. Será atualizada em breve.
 Essa função não foi concluída. Será atualizada em breve.
 
 #### `0 - SAIR`
-
 Essa etapa é simples, não requer nenhum tratamento. Ao informar o valor `0` o programa é encerrado
