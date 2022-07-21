@@ -42,8 +42,7 @@ Ao acessar essa opção, serão requisitadas as seguintes informações ao usuá
 * Numero
 * Bairro
 * Complemento
-* Complemento 2
-#### Confirmação de endereço (S/N)
+* UF
 </div>
 
 Confirmando os dados, o programa irá criar o arquivo **base.txt** e gravar as informações fornecidadas anteriormente (caso o arquivo exista, isto é, já foram cadastrados outros usuários, os novas informações serão apenas adicionadas).<br>

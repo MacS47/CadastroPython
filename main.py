@@ -15,5 +15,8 @@
 
 
 import functions as f
+import database as db
+
+db.initialize_database()
 
 f.menu()
