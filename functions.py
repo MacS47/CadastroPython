@@ -43,12 +43,16 @@ def register():
     print(f"\n====== DADOS PESSOAIS ======\n")
     nome = input(f"\nInforme o seu nome completo: ")
     idade = int(input(f"\nInforme a sua idade: "))
-    cpf = int(input(f"\nInforme o seu cpf(sem pontos e sem hífen): "))
+    cpf = str(input(f"\nInforme o seu cpf(sem pontos e sem hífen): "))
 
     # Buscando todos os dados de usuários no banco cadastro.db
     # e armazenando na variável result_set_usuario
     cursor.execute("""SELECT * FROM usuario""")    
     result_set_usuario = cursor.fetchall()
+
+    # Declarando a variável verificadora e incializando com True
+    # É necessário esse valor para que possa ser realizado o primeiro cadastro
+    verificador_cpf = True
 
     # Percorrendo os dados da variável para identificar se o CPF
     # informado pelo usuário já encontra-se na base
@@ -93,6 +97,10 @@ def register():
     
     # Caso o cpf informado já encontra-se na base, a rotina abaixo será executada
     else:
+        # Limpando a tela
+        clear()
+
+        # Informando ao usuário que o CPF informado já encontra-se no base de dados
         print("\n\n\t\t\tAtenção!\nCPF já cadastrado.\nCaso você deseje editar um registro acesse o menu 2 - EDITAR.")
 
     # Realizando o commit dos dados inseridos no banco
@@ -131,7 +139,7 @@ def list():
 
     # Informando ao usuário o número de usuário com endereço cadastrado
     # e logo abaixo exibindo os dados.
-    print(f"Total de usuários com endereços cadastrados: {len(result_set_all)}")
+    print(f"\nTotal de usuários com endereços cadastrados: {len(result_set_all)}")
     print(f"\n==============================================\n")
     print(f"NOME, IDADE, CPF, RUA, NUMERO, BAIRRO, CIDADE, UF")
     for items in result_set_all:

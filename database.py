@@ -33,7 +33,8 @@ def initialize_database():
             nome TEXT NOT NULL,
             idade INT NOT NULL,
             cpf CHAR(11),
-            data DATETIME
+            data DATETIME,
+            info TEXT
         );
     """)
 
@@ -47,7 +48,8 @@ def initialize_database():
             complemento TEXT,
             uf CHAR(2) NOT NULL, 
             id_usuario INTERGER NOT NULL,
-            data DATETIME
+            data DATETIME,
+            info TEXT
         );
     """)
 
