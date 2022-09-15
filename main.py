@@ -17,6 +17,8 @@
 import functions as f
 import database as db
 
+# Essa é a chamada para inicializar o banco de dados,
+# caso o banco já exista o nada acontece
 db.initialize_database()
 
 f.menu()
